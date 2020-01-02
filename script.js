@@ -20,6 +20,22 @@ function getUser() {
       console.log(xmlToJSON.parseString(text, myOptions)) // parse XML to JSON
     )
 };
+
+// Post Method 
+(async () => {
+  const rawResponse = await fetch('https://httpbin.org/post', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({a: 1, b: 'Textual content'})
+  });
+  const content = await rawResponse.json();
+
+  console.log(content);
+})();
   
 // call get user data
 getUser();
+
