@@ -21,7 +21,29 @@ function getUser() {
     )
 };
 
-// Post Method 
+// Post Method
+
+function postData() {
+  const data = { username: 'example' };
+
+  fetch(`https://httpbin.org/post`, {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then((response) => response.text())
+  .then((data) => {
+    console.log('Success:', xmlToJSON.parseString(data, myOptions));
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+
+
+/*
 (async () => {
   const rawResponse = await fetch('https://httpbin.org/post', {
     method: 'POST',
@@ -35,7 +57,9 @@ function getUser() {
 
   console.log(content);
 })();
-  
+*/  
+
 // call get user data
 getUser();
+postData();
 
