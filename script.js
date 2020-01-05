@@ -26,7 +26,7 @@ function getUser() {
 function postData() {
   const data = { username: 'example' };
 
-  fetch(`https://httpbin.org/post`, {
+  fetch(`https://wsearch.nlm.nih.gov/ws`, {
     method: 'POST', // or 'PUT'
     headers: {
       'Content-Type': 'application/json',
