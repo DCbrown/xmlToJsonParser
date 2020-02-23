@@ -14,7 +14,7 @@ var myOptions = {
 
 // init the function
 function getUser() {
-  fetch(`https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&term=diabetes&retmax=50`)
+  fetch(`https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&term=title:asthma`)
     .then(res => res.text())          // convert to plain text
     .then(text => 
       console.log(xmlToJSON.parseString(text, myOptions)) // parse XML to JSON
@@ -61,5 +61,5 @@ function postData() {
 
 // call get user data
 getUser();
-postData();
+// postData();
 
